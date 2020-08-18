@@ -153,7 +153,7 @@ func (h *Transport) preRoundTrip(r *http.Request, entry *Entry) error {
 
 		mediaType, _, err := mime.ParseMediaType(mimeType)
 		if err != nil {
-			return err
+			mediaType = "text/plain"
 		}
 
 		switch mediaType {
